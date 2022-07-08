@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import HelloWorld from "./components/HelloWorld";
 import NavBar from './components/nav/navbar';
+import ItemListContainer from './components/ItemListContainer';
 
 
 
 function App() {
 
-  return <NavBar/>;
+  return (
+  
+  <>
+  <NavBar/>
+  <ItemListContainer greeting={"Bienvenidos"}/>
+  
+  </>
+  )
 
 }
 

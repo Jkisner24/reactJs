@@ -1,14 +1,20 @@
 import React from "react";
-import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button,} from "react-bootstrap"
+import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap"
+import CartWidget from "../CartWidget/CartWidget";
+/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+ */
 
 const NavBar = () => {
 
     return(
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <>
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
             <img src="../../Nav.png" width="60"/>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
+            <CartWidget/>
         <Nav fill variant="tabs" className="mx-auto">
             <Nav.Link href="#Productos">Productos</Nav.Link>
             <Nav.Link href="#Envios">Envios</Nav.Link>
@@ -30,6 +36,7 @@ const NavBar = () => {
       </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
 
 )};
 
