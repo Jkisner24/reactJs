@@ -10,7 +10,6 @@ const ClickTracker = () => {
         }else if (operacion === "+" && count < 6){
             setCount(count+1);
         }
-
     }
 
     return (
@@ -29,7 +28,6 @@ const ClickTracker = () => {
         </Card.Body>
         </Card>
         </>
-
     )
 };
 

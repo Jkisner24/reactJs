@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/nav/navbar';
-import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
-
-
+import ItemList from './components//ItemList/ItemList';
 
 function App() {
 
@@ -12,8 +10,8 @@ function App() {
   
   <>
   <NavBar/>
-  <ItemListContainer greeting={"Bienvenidos"}/>
   <ItemCount/>
+  <ItemList/>
   </>
   )
 
