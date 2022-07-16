@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ItemList from "./ItemList";
 
 function ItemListContainer(props){
 
@@ -39,8 +40,8 @@ function ItemListContainer(props){
         stock: 3,
       }
 ];
-  let [items, setItems] = useState ([]);
 
+  let [items, setItems] = useState ([]);
 
   useEffect(
   () =>{
@@ -54,7 +55,6 @@ function ItemListContainer(props){
   
   });
 
-
   promiseItems.then(
     (respuesta) => {
       setItems(ItemsDATABASE);
@@ -67,7 +67,7 @@ function ItemListContainer(props){
 )
 
 return (
-  <ItemList items={items}/>
+  <ItemList dataitems={items}/>
 );
 }
 
