@@ -1,9 +1,7 @@
 import React from "react";
 import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap"
 import CartWidget from "../CartWidget/CartWidget";
-/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
- */
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -11,7 +9,9 @@ const NavBar = () => {
         <>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
+            <Link className="navbar-brand" to={"/"}>
             <img src="../../Nav.png" width="60"/>
+            </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <CartWidget/>

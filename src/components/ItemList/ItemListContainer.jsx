@@ -1,75 +1,37 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
+import data from "./utils/data.json";
+import { useParams } from "react-router-dom";
 
-function ItemListContainer(props){
 
-    const ItemsDATABASE =[
-      {
-        id: 1,
-        title: "oxycodone hydrochloride",
-        price: 563,
-        category: "Ethex Corporation",
-        stock: 10,
-      }, 
-      {
-        id: 2,
-        title: "BETULA NIGRA POLLEN",
-        price: 357,
-        category: "ALK-Abello, Inc.",
-        stock: 9,
-      }, 
-      {
-        id: 3,
-        title: "DEXAMETHASONE Sodium Phosphate",
-        price: 95,
-        category: "Physicians Total Care, Inc.",
-        stock: 6,
-      }, 
-      {
-        id: 4,
-        title: "Lovastatin",
-        price: 699,
-        category: "American Health Packaging",
-        stock: 10
-      }, 
-      {
-        id: 5,
-        title: "Dexamethasone",
-        price: 560,
-        category: "Roxane Laboratories, Inc",
-        stock: 3,
+const ItemListContainer = () => {
+    const { name } = useParams();
+    console.log(name);
+    const [items, setItems] = useState ([]);
+    const promise = new Promise ((resolve) => {
+      setTimeout(() => resolve(data), 3000)
+    });
+
+    useEffect (() => {
+        promise.then((res) =>{
+          const products = res;
+          if (name) {
+           setItems(products.filter((product) => product.category == name))
+      }else {
+        setItems(products);
       }
-];
 
-  let [items, setItems] = useState ([]);
-
-  useEffect(
-  () =>{
-     let promiseItems = new Promise ((resolve, reject) => {
-      setTimeout(
-        () => {
-          resolve(ItemsDATABASE);
-        },
+    });
     
-     2000);
-  
-  });
-
-  promiseItems.then(
-    (respuesta) => {
-      setItems(ItemsDATABASE);
-    }
-  ).catch(
-    (errorMsg) => console.error(errorMsg)
-  )
-},
-  []
-)
-
-return (
-  <ItemList dataitems={items}/>
-);
-}
+    }, [name]);
+    
+    return (
+    <>
+        <div className="mt-5">
+        <ItemList items={items} />
+        </div>
+    </>
+  );
+};
 
 export default ItemListContainer;
-
