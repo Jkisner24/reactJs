@@ -1,34 +1,58 @@
 import { useState } from "react";
-import {Card, Button} from "react-bootstrap";
-
-
-const ClickTracker = () => {
-    const [count, setCount] = useState(1);
-    const registarClick = (operacion) => {
-        if (operacion === "-" && count > 0) {
-            setCount(count-1);
-        }else if (operacion === "+" && count < 6){
-            setCount(count+1);
-        }
+// Ponemos valores default a las props, ya que no funcionaría si nos olvidamos de enviarlas.
+const ItemCount = ({ stock = 5, initial = 0, onAdd }) => {
+  const [count, setCount] = useState(initial);
+  const updateCount = (op) => {
+    if (op === "-" && count > 0) {
+      setCount(count - 1);
     }
-
-    return (
-        <>
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="../../comida.jpg" />
-        <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        </Card.Text>
-        <button onClick={()=> registarClick("-")}>-</button>
-        {count} 
-        <button onClick={()=> registarClick("+")}>+</button>
-        <Button variant="success">Agregar al carrito</Button>
-        </Card.Body>
-        </Card>
-        </>
-    )
+    if (op === "+" && count < stock) {
+      setCount(count + 1);
+    }
+  };
+  const updateCountInput = (e) => {
+    const { value } = e.target;
+    if (value <= stock) {
+      setCount(isNaN(value) ? 0 : parseInt(value));
+    }
+  };
+  return (
+    <>
+      <div className="input-group input-spinner mb-3 d-flex justify-content-center">
+        <input
+          onChange={(e) => updateCountInput(e)}
+          className="border-primary"
+          placeholder=""
+          value={count}
+          type="number"
+        />
+        <button
+          onClick={() => updateCount("-")}
+          className="btn btn-icon btn-primary"
+          type="button"
+        >
+          -
+        </button>
+        <button
+          onClick={() => updateCount("+")}
+          className="btn btn-icon btn-primary"
+          type="button"
+        >
+          +
+        </button>
+      </div>
+      <div className="d-flex justify-content-center">
+        <button
+          onClick={() => onAdd(count)}
+          type="button"
+          className="btn btn-info"
+          disabled={count === "" || count === 0}
+        >
+          Buy!
+        </button>
+      </div>
+    </>
+  );
 };
 
-export default ClickTracker;
+export default ItemCount;

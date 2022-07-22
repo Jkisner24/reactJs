@@ -1,5 +1,5 @@
 import './App.css';
-import Item from './components/ItemList/Item';
+import Item from "./components/ItemList/Item"
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import NavBar from "./components/ItemList/NavBar"
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route index ="/" element={<ItemListContainer/>}/>
+        <Route index element={<ItemListContainer/>}/>
         <Route path="/category/:name" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route 
