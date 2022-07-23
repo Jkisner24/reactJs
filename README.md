@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+Bienvenidos! Este es un proyecto de Julian Kisner para el curso de react en Coder House. 
+
+Durante el curso se van aprendiendo diferentes tecnicas y se aplican los conceptos adquiridos al proyecto.
+
+Algunos de los conceptos aplicados en la App son : 
+
+-Sugar syntax.
+-Desarrollo de codigo en jsx.
+-Implementacion de componentes: De presentacion y contenedores. 
+-Escalabilidad, mantenimiento, depuracion.
+-Children, props.
+-Ciclos de vida, estados. 
+-API Promise, asincronia, Map.
+-Paradigmas de intercambio de informacion, requests.
+-React router, routing.
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +85,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ -->
