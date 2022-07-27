@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/CartContext";
+
 
 const ItemDetail = ({ item }) => {
+  const { setCartItems } = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
   const onAdd = (amount) => {
     setAmount(amount);
+    setCartItems((prevState) => [...prevState, item]);
   };
   return (
     <div className="card" style={{ width: "20rem" }}>
