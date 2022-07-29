@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
-    const newLocal = <WidgetCart />;
     return(
         <>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -15,7 +14,7 @@ const NavBar = () => {
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-            {newLocal}
+            <WidgetCart />
         <Nav fill variant="tabs" className="mx-auto">
             <Nav.Link href="#Productos">Productos</Nav.Link>
             <Nav.Link href="#Envios">Envios</Nav.Link>
