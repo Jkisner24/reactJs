@@ -2,12 +2,15 @@ import { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
+import { GContext } from "../../contexts/CartContext";
 
 
 const ItemDetail = ({ item }) => {
   const { setCartItems } = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
+  const {addItem} = useContext(GContext);
+  console.log(addItem)
   const onAdd = (amount) => {
     setAmount(amount);
     setCartItems((prevState) => [...prevState, item]);

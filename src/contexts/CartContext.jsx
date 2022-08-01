@@ -1,34 +1,38 @@
 import React, { createContext, useState } from "react";
-export const CartContext = createContext();
 
-export const CartProvider = (props) => {
+export const GContext = createContext();
+
+const CartContext = ({children}) => {
   const [cartItems, setCartItems] = useState([]);
-/*   const addItem= (item,quantity)=>{
-      let index = isInCart(item.id);
-      if(index>-1){
-          let Cart = cartItems;
-          Cart[index].quantity+=quantity;
-          setCartItems(Cart)
-      }else{
-          setCartItems((prevState) => [...prevState, {...item,"quantity":quantity}])
-      }
-  }
-  const howManyItems = ()=>{return cartItems.length}
-  const removeItem = (itemId)=>{
-      let Cart = cartItems;
-      console.log(Cart);
-      Cart.splice(isInCart(itemId),1);
-      console.log(Cart);
-      setCartItems(Cart)
-  }
-  const clear = ()=>{setCartItems([])}
-  const isInCart = (id)=>{return cartItems.findIndex(e=>{return e.id === id ? true : false })}
-  console.log(cartItems) */
-return (
-    <CartContext.Provider value={{ cartItems, setCartItems }}>
-      {props.children}
-    </CartContext.Provider>
+
+  const addItem = (item, quantity) => {
+    const newItem = isInCart(item);
+    if (newItem){
+      quantity = quantity + newItem.quantity;
+      setCartItems(
+        cartItems.splice(
+          cartItems.findIndex((element)=> element.item.id === item.id),
+      1
+      )
+    )
+    };
+    setCartItems([...cartItems, {item, quantity}])
+  };
+  const isInCart = (item) => {
+    cartItems.find((element) => element.item === item);
+  };
+  const clear = () => {
+    setCartItems([])
+  };
+  const removeItem = (itemId) => {
+    setCartItems(cartItems.filter((element)=> element.item.id != itemId))
+  }; 
+
+  return (
+    <GContext.Provider value={{ cartItems, addItem }}>
+      {children}
+    </GContext.Provider>
   );
 };
 
-export default CartProvider;
+export default CartContext;
