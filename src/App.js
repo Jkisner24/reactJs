@@ -1,11 +1,11 @@
 import './App.css';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import NavBar from "./components/ItemList/NavBar"
+import Item from './components/ItemList/Item';
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
-import Cart from "./components/ItemList/Cart"
 import CartContext from "./contexts/CartContext";
-
+import Cart from "./components/ItemList/Cart"
 
 function App() {
   return (
@@ -30,7 +30,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CartContext>
-
     </>
   );
 }

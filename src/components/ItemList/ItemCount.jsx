@@ -1,5 +1,5 @@
 import { useState } from "react";
-// Ponemos valores default a las props, ya que no funcionaría si nos olvidamos de enviarlas.
+
 const ItemCount = ({ stock = 5, initial = 0, onAdd }) => {
   const [count, setCount] = useState(initial);
   const updateCount = (op) => {
