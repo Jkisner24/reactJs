@@ -26,7 +26,7 @@ const CartContext = ({children}) => {
     setCartItem(cartItems.filter((element)=> element.item.id !== itemId))
   }; 
 
-  return <GContext.Provider value={{ cartItems, setCartItem, addItem, removeItem, clear}}>{children}</GContext.Provider>
+  return <GContext.Provider value={{ cartItems, setCartItem, addItem, isInCart, removeItem, clear}}>{children}</GContext.Provider>
   ;
 };
 

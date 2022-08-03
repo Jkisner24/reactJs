@@ -6,7 +6,7 @@ const Cart = () => {
   const { cartItems } = useContext(GContext);
   useEffect(() => {
     let total = 0;
-    cartItems.forEach((item, quantity) => {
+    cartItems.forEach(({item, quantity}) => {
       total += parseInt(item.price)* quantity;
     });
     setTotalPrice(total);
