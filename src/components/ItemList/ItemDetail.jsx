@@ -2,9 +2,6 @@ import { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { GContext } from "../../contexts/CartContext";
-import CartContext  from "../../contexts/CartContext";
-
-
 
 const ItemDetail = ({ item }) => {
   const { setCartItem } = useContext(GContext);
@@ -25,11 +22,7 @@ const ItemDetail = ({ item }) => {
           (price * discount) / 100
         } | with a ${discount}% discount!`}</p>
       </div>
-      {amount == 0 ? (
-        <ItemCount stock={stock} initial={0} onAdd={onAdd} />
-      ) : (
-        <h1>{amount} items will be buy</h1>
-      )}
+      {amount == 0 && <ItemCount stock={stock} initial={0} onAdd={onAdd} />}
       <div className="d-flex justify-content-center my-3">
         <Link to="/cart/">
           <button className="btn btn-warning">Go to checkout</button>
