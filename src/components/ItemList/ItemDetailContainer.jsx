@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Spinner from "../../Spinner";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
-
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
@@ -22,6 +21,5 @@ const ItemDetailContainer = () => {
   }, [id]);
   return loading ? <Spinner /> : <ItemDetail item={item} />;
 };
-
 
 export default ItemDetailContainer;

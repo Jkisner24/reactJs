@@ -12,7 +12,7 @@ import {
 
 export const GContext = createContext();
 
-const CartContext = ({children}) => {
+const CartContext = (props) => {
   const [cartItems, setCartItems] = useState([]);
 
   const sendOrder = async (totalPrice, buyerData) => {
@@ -113,7 +113,7 @@ const CartContext = ({children}) => {
         // multipleUpdates,
       }}
     >
-      {children}
+      {props.children}
     </GContext.Provider>
   );
 };
