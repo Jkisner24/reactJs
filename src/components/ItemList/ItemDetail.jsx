@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { GContext } from "../../contexts/CartContext";
 
 const ItemDetail = ({ item }) => {
-  const { setCartItem } = useContext(GContext);
+  const { setCartItems } = useContext(GContext);
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
   const onAdd = (amount) => {
     setAmount(amount)
-    setCartItem((prevState) => [...prevState, { item, quantity: amount }]);
+    setCartItems((prevState) => [...prevState, { item, quantity: amount }]);
   };
 
   return (
