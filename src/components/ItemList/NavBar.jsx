@@ -16,12 +16,12 @@ const NavBar = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
             <WidgetCart />
         <Nav fill variant="tabs" className="mx-auto">
-            <Nav.Link href="#Productos">Productos</Nav.Link>
-            <Nav.Link href="#Envios">Envios</Nav.Link>
-            <NavDropdown title="Categorias" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Destacados</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Mas vendidos</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Outlet</NavDropdown.Item>
+            <Nav.Link href="#Productos">Electronics</Nav.Link>
+            <Nav.Link href="#Envios">TVs</Nav.Link>
+            <NavDropdown title="Accesories & Supplies" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Headphones</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Cameras</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Smartwatches</NavDropdown.Item>
             </NavDropdown>
         </Nav>
         <Form className="d-flex">

@@ -44,12 +44,13 @@ const Cart = () => {
           </>
         ))}
       </ul>
-      <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1>
-      <form onSubmit={handleSubmit}>
+        <h1 class="bg-primary">{`Your total is: $${totalPrice}`}</h1>
+        <form onSubmit={handleSubmit}>
         <input type="text" />
         <input type="email" />
         <input type="tel" />
         <button
+          // onClick={() => sendOrder(totalPrice)}
           type="submit"
           className="btn btn-info"
         >
