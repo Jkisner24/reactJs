@@ -18,7 +18,7 @@ const NavBar = () => {
         <Nav fill variant="tabs" className="mx-auto">
             <Nav.Link href="#Productos">Electronics</Nav.Link>
             <Nav.Link href="#Envios">TVs</Nav.Link>
-            <NavDropdown title="Accesories & Supplies" id="collasible-nav-dropdown">
+            <NavDropdown title="Accesories and Supplies" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Headphones</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Cameras</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Smartwatches</NavDropdown.Item>

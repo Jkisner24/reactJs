@@ -16,6 +16,7 @@ const Footer = () => {
         <div className="design-by">Design By Your Name</div>
         <div className="sns-links">
           <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <i class="bi bi-facebook"></i>
           </a>
           <a href="https://twitter.com" target="_blank" rel="noreferrer">
           </a>
