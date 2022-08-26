@@ -4,15 +4,12 @@ import { GContext } from "../../contexts/CartContext";
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const { cartItems, sendOrder } = useContext(GContext);
-  useContext(GContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const inputs = document.getElementsByTagName("input");
     console.log(inputs[0]);
     const data = Array.from(inputs).map((input, index) => input.value);
     sendOrder(totalPrice, { name: data[0], mail: data[1], phone: data[2] });
-    // updateOrder();
-    // multipleUpdates();
   };
   
   useEffect(() => {
@@ -31,7 +28,7 @@ const Cart = () => {
               <img
                 className="card-img-top"
                 src={item.pictureUrl}
-                alt="Card image cap"
+                alt="Card cap"
               />
               <div className="card-body d-flex flex-column justify-content-center">
                 <h5 className="card-title">{item.title}</h5>
@@ -46,11 +43,11 @@ const Cart = () => {
       </ul>
         <h1 class="bg-primary">{`Your total is: $${totalPrice}`}</h1>
         <form onSubmit={handleSubmit}>
-        <input type="text" />
-        <input type="email" />
+        <label for="formGroupExampleInput" className="form-label">Name </label>
+        <input type="text" className="form-control-sm" id="formGroupExampleInput" placeholder="Mike Johnson"/>
+        <input type="email" className="form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com"/>
         <input type="tel" />
         <button
-          // onClick={() => sendOrder(totalPrice)}
           type="submit"
           className="btn btn-info"
         >

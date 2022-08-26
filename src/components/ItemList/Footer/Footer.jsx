@@ -5,23 +5,17 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-info">
-        <h1>Your Name</h1>
+        <h1>CONNECT</h1>
         <p>Based in Your City</p>
       </div>
       <div className="footer-contact">
         <h3>Contact me</h3>
-        <p>And let's get down to work</p>
+        <p>Lorem, ipsum dolor sit amet consectetur</p>
       </div>
       <div className="footer-sns">
-        <div className="design-by">Design By Your Name</div>
+        <div className="design-by">Design By JK</div>
         <div className="sns-links">
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-          <i class="bi bi-facebook"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-          </a>
+        <h1>redes</h1>
         </div>
       </div>
     </footer>
