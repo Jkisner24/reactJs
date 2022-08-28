@@ -41,16 +41,23 @@ const Cart = () => {
           </>
         ))}
       </ul>
-        <h1 class="bg-primary">{`Your total is: $${totalPrice}`}</h1>
+        <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1>
         <form onSubmit={handleSubmit}>
-        <label for="formGroupExampleInput" className="form-label">Name </label>
-        <input type="text" className="form-control-sm" id="formGroupExampleInput" placeholder="Mike Johnson"/>
-        <input type="email" className="form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com"/>
-        <input type="tel" />
-        <button
-          type="submit"
-          className="btn btn-info"
-        >
+        <div className="row g-2">
+        <div className="col-md-8">
+        <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
+          <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Mike Johnson"/>
+        </div>
+        <div className="col-md-8">
+        <label htmlFor="inputEmail4" className="form-label ">Email</label>
+          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+        </div>
+        <div className="col-md-8">
+        <label htmlFor="inputCity" className="form-label">Telephone number</label>
+          <input type="tel" className="form-control" id="exampleFormControlInput1" placeholder="115869210" />
+        </div>
+        </div>
+        <button type="submit" className="btn btn-info m-3">
           Send order
         </button>
       </form>
