@@ -24,7 +24,8 @@ const Cart = () => {
       <ul>
         {cartItems.map(({ item, quantity }) => (
           <>
-            <div key={item.id} className="card" style={{ width: "20rem" }}>
+            <div className="row justify-content-center">
+            <div key={item.id} className="card col-4">
               <img
                 className="card-img-top"
                 src={item.pictureUrl}
@@ -36,30 +37,33 @@ const Cart = () => {
                 <p className="card-text">{`$${
                   ((item.price * item.discount) / 100) * quantity
                 } | with a ${item.discount}% discount!`}</p>
-              </div>
+            </div>
+            </div>
             </div>
           </>
         ))}
       </ul>
-        <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1>
+        <h3 className="bg-secondary w-50 container text-center">{`Your total is: $${totalPrice}`}</h3>
         <form onSubmit={handleSubmit}>
-        <div className="row g-2">
-        <div className="col-md-8">
+        <div className="row justify-content-center text-center">
+        <div className="col-md-7">
         <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
           <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Mike Johnson"/>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-7">
         <label htmlFor="inputEmail4" className="form-label ">Email</label>
           <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-7">
         <label htmlFor="inputCity" className="form-label">Telephone number</label>
           <input type="tel" className="form-control" id="exampleFormControlInput1" placeholder="115869210" />
         </div>
         </div>
-        <button type="submit" className="btn btn-info m-3">
+        <div className="row justify-content-center text-center">
+        <button type="submit" className="btn btn-info w-50 mt-3 ">
           Send order
         </button>
+        </div>
       </form>
     </>
   );
