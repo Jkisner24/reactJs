@@ -24,7 +24,7 @@ const Cart = () => {
       <ul>
         {cartItems.map(({ item, quantity }) => (
           <>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mt-5">
             <div key={item.id} className="card col-4">
               <img
                 className="card-img-top"
@@ -43,7 +43,7 @@ const Cart = () => {
           </>
         ))}
       </ul>
-        <h3 className="bg-secondary w-50 container text-center">{`Your total is: $${totalPrice}`}</h3>
+        <h3 className="bg-success w-50 container text-center">{`Your total is: $${totalPrice}`}</h3>
         <form onSubmit={handleSubmit}>
         <div className="row justify-content-center text-center">
         <div className="col-md-7">

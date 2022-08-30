@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="footer-sns">
         <div className="design-by">Design By JK</div>
         <div className="sns-links">
-        <h1>redes</h1>
+        <h1>Social media</h1>
         </div>
       </div>
     </footer>

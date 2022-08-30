@@ -13,7 +13,7 @@ const ItemDetail = ({ item }) => {
   };
 
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content-center mt-5">
     <div className="card col-4" style={{ width: "18rem" }}>
       <img className="card-img-top" src={pictureUrl} alt="Card image cap" />
       <div className="card-body d-flex flex-column justify-content-center">
